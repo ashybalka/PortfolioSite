@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мое Портфолио</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1E1E1E;
+            color: #E0E0E0;
+        }
+        header {
+            background: linear-gradient(90deg, #333, #444);
+            color: white;
+            padding: 2em 0;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+        .language-selector {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .language-selector select {
+            background-color: #4FB0E6;
+            color: white;
+            border: none;
+            padding: 5px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        main {
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .game {
+            background-color: #2C2C2C;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            margin-bottom: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 800px;
+            transition: transform 0.3s;
+        }
+        .game:hover {
+            transform: scale(1.03);
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        h2 a {
+            color: #80C7F5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        h2 a:hover {
+            color: #4FB0E6;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        ul li::before {
+            content: '✔';
+            margin-right: 10px;
+            color: #4FB0E6;
+        }
+        button.spoiler {
+            cursor: pointer;
+            background-color: #4FB0E6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            width: 100%;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        button.spoiler:hover {
+            background-color: #388E3C;
+            transform: scale(1.05);
+        }
+        .spoiler-content {
+            display: none;
+            padding: 10px;
+            border-top: 1px solid #555;
+            margin-top: 10px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Carousel styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .carousel img:hover {
+            transform: scale(1.1);
+        }
+        .carousel-buttons {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+        }
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* Media Queries for mobile */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            p, ul li {
+                font-size: 1rem;
+            }
+            .language-selector {
+                top: 5px;
+                right: 10px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        function toggleSpoiler(id) {
+            var content = document.getElementById(id);
+            content.style.display = (content.style.display === "none" || !content.style.display) ? "block" : "none";
+        }
+
+        function changeLanguage() {
+            const lang = document.getElementById("language").value;
+            const elements = document.querySelectorAll("[data-lang]");
+
+            elements.forEach(element => {
+                const key = element.getAttribute("data-lang");
+                element.innerText = translations[lang][key];
+            });
+
+            // Обновляем изображения карусели при изменении языка
+            updateCarousel(lang);
+        }
+
+        const translations = {
+            ru: {
+                title: "Портфолио Unity Разработчика",
+                wordtris: "WordTris",
+                description: "Управляй буквами, чтобы собрать слова!",
+                features: "Особенности:",
+                feature1: "Казуальная 2D игра",
+                feature2: "Открытый мир для исследования",
+                feature3: "Разнообразные враги и боссы",
+                feature4: "Потрясающая графика и музыка",
+                play: "Играть в WordTris"
+            },
+            en: {
+                title: "Unity Developer Portfolio",
+                wordtris: "WordTris",
+                description: "Control letters to make words!",
+                features: "Features:",
+                feature1: "Casual 2D game",
+                feature2: "Open world to explore",
+                feature3: "Variety of enemies and bosses",
+                feature4: "Stunning graphics and music",
+                play: "Play WordTris"
+            },
+            de: {
+                title: "Unity Entwickler-Portfolio",
+                wordtris: "WordTris",
+                description: "Steuere Buchstaben, um Wörter zu bilden!",
+                features: "Merkmale:",
+                feature1: "Lässiges 2D-Spiel",
+                feature2: "Offene Welt zum Erkunden",
+                feature3: "Verschiedene Feinde und Bosse",
+                feature4: "Beeindruckende Grafik und Musik",
+                play: "Spielen Sie WordTris"
+            }
+        };
+
+		const screenshots = {
+			ru: ['./Screenshots/B&C/MainRu.png', './Screenshots/B&C/GameRu.png', './Screenshots/B&C/WinRu.png'],
+			en: ['./Screenshots/B&C/MainEn.png', './Screenshots/B&C/GameEn.png', './Screenshots/B&C/WinEn.png'],
+			de: ['./Screenshots/B&C/MainDe.png', './Screenshots/B&C/GameDe.png', './Screenshots/B&C/WinDe.png']
+		};
+        let currentImageIndex = 0;
+
+        function updateCarousel(lang) {
+            const imgElement = document.getElementById("carousel-image");
+            currentImageIndex = 0;
+            imgElement.src = screenshots[lang][currentImageIndex];
+        }
+
+        function nextImage() {
+            const lang = document.getElementById("language").value;
+            currentImageIndex = (currentImageIndex + 1) % screenshots[lang].length;
+            document.getElementById("carousel-image").src = screenshots[lang][currentImageIndex];
+        }
+
+        function prevImage() {
+            const lang = document.getElementById("language").value;
+            currentImageIndex = (currentImageIndex - 1 + screenshots[lang].length) % screenshots[lang].length;
+            document.getElementById("carousel-image").src = screenshots[lang][currentImageIndex];
+        }
+    </script>
+</head>
+<body onload="changeLanguage()">
+    <header>
+        <h1 data-lang="title">Портфолио Unity Разработчика</h1>
+        <div class="language-selector">
+            <select id="language" onchange="changeLanguage()">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </div>
+    </header>
+    <main>
+        <section class="game">
+            <h2 data-lang="wordtris">WordTris</h2>
+			<!-- Карусель -->
+			<div class="carousel">
+            <img id="carousel-image" src="" alt="Screenshot">
+            <div class="carousel-buttons">
+                <button class="carousel-button" onclick="prevImage()">◀</button>
+                <button class="carousel-button" onclick="nextImage()">▶</button>
+            </div>
+			</div>
+            <p data-lang="description">Управляй буквами, чтобы собрать слова!</p>
+            <p data-lang="features">Особенности:</p>
+            <ul>
+                <li data-lang="feature1">Казуальная 2D игра</li>
+                <li data-lang="feature2">Открытый мир для исследования</li>
+                <li data-lang="feature3">Разнообразные враги и боссы</li>
+                <li data-lang="feature4">Потрясающая графика и музыка</li>
+            </ul>
+            <button class="spoiler" onclick="toggleSpoiler('game1')" data-lang="play">Играть в WordTris</button>
+            <div class="spoiler-content" id="game1">
+                <iframe src="https://ashybalka.github.io/WordTris/Build/index.html"></iframe>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
