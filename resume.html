@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Artem Shibalko Unity Developer Resume</title>
+	
+	<!-- Подключение CSS-файла -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	
+	<!-- Подключение JS-файла -->
+	<script src="scripts.js"></script>
+</head>
+<body onload="changeLanguage()">
+    <header>
+        <h1 data-lang="name">Артем Шибалко</h1>
+		<h2 data-lang="title">Unity Разработчик</h2>
+        <div class="language-selector">
+            <select id="language" onchange="changeLanguage()">
+                <option value="ru">Русский</option>
+                <option value="en">English</option>
+                <option value="de">Deutsch</option>
+            </select>
+        </div>
+		<div class="header-buttons">
+			<button class="header-button" onclick="window.location.href='./index.html'" data-lang="projects">Проекты</button>
+			<button class="header-button" onclick="window.location.href='./resume.html'" data-lang="resume">Резюме</button>
+		</div>
+    </header>
+    <main>
+         <section class="game">
+            <h2 data-lang="profile">Профиль</h2>
+            <p data-lang="profile1">Я опытный разработчик на Unity с разнообразным опытом в области разработки программного обеспечения, 
+			инженерии DevOps и администрирования систем Linux. Мои сильные навыки программирования и дизайна в объектно-ориентированных языках, таких как C#, 
+			Python и Ruby on Rails, позволили мне создавать высококачественные, увлекательные игры. Я хорошо разбираюсь в методологии DevOps, 
+			что повышает мою способность оптимизировать процессы разработки и обеспечивать бесперебойную доставку проектов."
+			<p data-lang="profile2">Мой опыт работы в международных командах отточил мои навыки сотрудничества и общения. 
+			Я увлечен использованием своих технических знаний и творческого видения для разработки инновационных игровых решений.</p>
+        </section>
+    </main>
+</body>
+</html>
