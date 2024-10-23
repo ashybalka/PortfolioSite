@@ -97,6 +97,24 @@
             margin-right: 10px;
             color: #4FB0E6;
         }
+		.header-buttons {
+    margin-top: 1em;
+}
+.header-button {
+    background-color: #4FB0E6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.header-button:hover {
+    background-color: #388E3C;
+    transform: scale(1.05);
+}
         button.spoiler {
             cursor: pointer;
             background-color: #4FB0E6;
@@ -197,41 +215,51 @@
             updateCarousel(lang);
         }
 
-        const translations = {
-            ru: {
-                title: "Портфолио Unity Разработчика",
-                bullsandcows: "Быки и Коровы",
-                description: "Подбери шифр за минимальное количество попыток!",
-                features: "Особенности:",
-                feature1: "ГиперКазуальная 2D игра",
-                feature2: "Открытый мир для исследования",
-                feature3: "Разнообразные враги и боссы",
-                feature4: "Потрясающая графика и музыка",
-                play: "Играть в Быки и Коровы"
-            },
-            en: {
-                title: "Unity Developer Portfolio",
-                bullsandcows: "Bulls And Cows",
-                description: "Crack the code in the fewest attempts!",
-                features: "Features:",
-                feature1: "Hyper-Casual 2D Game",
-                feature2: "Open world to explore",
-                feature3: "Variety of enemies and bosses",
-                feature4: "Stunning graphics and music",
-                play: "Play Bulls And Cows"
-            },
-            de: {
-                title: "Unity Entwickler-Portfolio",
-                bullsandcows: "Bullen und Kühe",
-                description: "Finde den Code mit den wenigsten Versuchen!",
-                features: "Merkmale:",
-                feature1: "Hyper-Casual 2D-Spiel",
-                feature2: "Offene Welt zum Erkunden",
-                feature3: "Verschiedene Feinde und Bosse",
-                feature4: "Beeindruckende Grafik und Musik",
-                play: "Spielen Sie Bullen und Kühe"
-            }
-        };
+const translations = {
+    ru: {
+        name: "Артём Шибалко",
+        title: "Unity Разработчик", 
+        bullsandcows: "Быки и Коровы",
+        description: "Подбери шифр за минимальное количество попыток!",
+        features: "Особенности:",
+        feature1: "ГиперКазуальная 2D игра",
+        feature2: "Открытый мир для исследования",
+        feature3: "Разнообразные враги и боссы",
+        feature4: "Потрясающая графика и музыка",
+        play: "Играть в Быки и Коровы",
+        projects: "Проекты", 
+        resume: "Резюме"      
+    },
+    en: {
+        name: "Artsem Shibalko",  
+        title: "Unity Developer",
+        bullsandcows: "Bulls And Cows",
+        description: "Crack the code in the fewest attempts!",
+        features: "Features:",
+        feature1: "Hyper-Casual 2D Game",
+        feature2: "Open world to explore",
+        feature3: "Variety of enemies and bosses",
+        feature4: "Stunning graphics and music",
+        play: "Play Bulls And Cows",
+        projects: "Projects",  
+        resume: "Resume"      
+    },
+    de: {
+        name: "Artsem Shibalko", 
+        title: "Unity Entwickler",  
+        bullsandcows: "Bullen und Kühe",
+        description: "Finde den Code mit den wenigsten Versuchen!",
+        features: "Merkmale:",
+        feature1: "Hyper-Casual 2D-Spiel",
+        feature2: "Offene Welt zum Erkunden",
+        feature3: "Verschiedene Feinde und Bosse",
+        feature4: "Beeindruckende Grafik und Musik",
+        play: "Spielen Sie Bullen und Kühe",
+        projects: "Projekte", 
+        resume: "Lebenslauf" 
+    }
+};
+
 
 		const screenshots = {
 			ru: ['./Screenshots/B&C/MainRu.png', './Screenshots/B&C/GameRu.png', './Screenshots/B&C/WinRu.png'],
@@ -261,7 +289,8 @@
 </head>
 <body onload="changeLanguage()">
     <header>
-        <h1 data-lang="title">Портфолио Unity Разработчика</h1>
+        <h1 data-lang="name">Артем Шибалко</h1>
+		<h2 data-lang="title">Unity Разработчик</h2>
         <div class="language-selector">
             <select id="language" onchange="changeLanguage()">
                 <option value="ru">Русский</option>
@@ -269,6 +298,10 @@
                 <option value="de">Deutsch</option>
             </select>
         </div>
+		<div class="header-buttons">
+			<button class="header-button" onclick="window.location.href='./index.html'" data-lang="projects">Проекты</button>
+			<button class="header-button" onclick="window.location.href='link_to_portfolio_page.html'" data-lang="resume">Резюме</button>
+		</div>
     </header>
     <main>
         <section class="game">
