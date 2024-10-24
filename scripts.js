@@ -14,6 +14,7 @@ function changeLanguage() {
 
     // Обновляем изображения карусели при изменении языка
     updateCarousel(lang);
+	updateWordtrisCarousel(lang);
 }
 
 const translations = {
@@ -131,9 +132,9 @@ function prevImage() {
 let currentWordtrisImageIndex = 0;
 
 const wordtrisScreenshots = {
-    ru: ['./Screenshots/WordTris/MainRu.png', './Screenshots/WordTris/GameRu.png', './Screenshots/WordTris/WinRu.png'],
-    en: ['./Screenshots/WordTris/MainEn.png', './Screenshots/WordTris/GameEn.png', './Screenshots/WordTris/WinEn.png'],
-    de: ['./Screenshots/WordTris/MainDe.png', './Screenshots/WordTris/GameDe.png', './Screenshots/WordTris/WinDe.png']
+    ru: ['./Screenshots/WordTris/MainRu.png', './Screenshots/WordTris/GameRu.png'],
+    en: ['./Screenshots/WordTris/MainEn.png', './Screenshots/WordTris/GameEn.png'],
+    de: ['./Screenshots/WordTris/MainEn.png', './Screenshots/WordTris/GameEn.png']
 };
 
 function updateWordtrisCarousel(lang) {
