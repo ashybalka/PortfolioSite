@@ -1,7 +1,21 @@
-function toggleSpoiler(id) {
-    var content = document.getElementById(id);
-    content.style.display = (content.style.display === "none" || !content.style.display) ? "block" : "none";
-}
+        function toggleSpoiler(spoilerId) {
+            const spoilerContent = document.getElementById(spoilerId);
+            const iframe = document.getElementById(spoilerId + '-iframe');
+
+            // Проверяем, скрыт ли спойлер
+            if (spoilerContent.style.display === "none" || spoilerContent.style.display === "") {
+                // Показываем спойлер
+                spoilerContent.style.display = "block";
+                
+                // Загружаем iframe, если он еще не загружен
+                if (!iframe.src) {
+                    iframe.src = iframe.getAttribute('data-src');
+                }
+            } else {
+                // Скрываем спойлер
+                spoilerContent.style.display = "none";
+            }
+        }
 
 function changeLanguage() {
     const lang = document.getElementById("language").value;
@@ -42,7 +56,16 @@ const translations = {
         wordtrisFeature2: "Разнообразные уровни сложности",
         wordtrisFeature3: "Поддержка нескольких языков", 
         wordtrisFeature4: "Множество режимов игры",
-        playWordtris: "Играть в WordTris"		
+        playWordtris: "Играть в WordTris",
+		
+		geoquiz: "Geo Quiz", 
+        geoquizDescription: "Проверь на сколько ты знаешь географию",
+        geoquizFeatures: "Особенности:",
+        geoquizFeature1: "Увлекательный игровой процесс",
+        geoquizFeature2: "Разнообразные уровни сложности",
+        geoquizFeature3: "Поддержка нескольких языков", 
+        geoquizFeature4: "Множество режимов игры",
+        playGeoQuiz: "Играть в GeoQuiz"
     },
     en: {
         name: "Artsem Shibalko",  
@@ -153,4 +176,30 @@ function prevImageWordtris() {
     const lang = document.getElementById("language").value;
     currentWordtrisImageIndex = (currentWordtrisImageIndex - 1 + wordtrisScreenshots[lang].length) % wordtrisScreenshots[lang].length;
     document.getElementById("carousel-image-wordtris").src = wordtrisScreenshots[lang][currentWordtrisImageIndex];
+}
+
+let currentGeoQuizImageIndex = 0;
+
+const geoquizScreenshots = {
+    ru: ['./Screenshots/GeoQuiz/MainRu.png', './Screenshots/GeoQuiz/GameRu.png'],
+    en: ['./Screenshots/GeoQuiz/MainEn.png', './Screenshots/GeoQuiz/GameEn.png'],
+    de: ['./Screenshots/GeoQuiz/MainEn.png', './Screenshots/GeoQuiz/GameEn.png']
+};
+
+function updateGeoQuizCarousel(lang) {
+    const imgElement = document.getElementById("carousel-image-geoquiz");
+    currentGeoQuizImageIndex = 0;
+    imgElement.src = geoquizScreenshots[lang][currentGeoQuizImageIndex];
+}
+
+function nextImageGeoQuiz() {
+    const lang = document.getElementById("language").value;
+    currentGeoQuizImageIndex = (currentGeoQuizImageIndex + 1) % geoquizScreenshots[lang].length;
+    document.getElementById("carousel-image-geoquiz").src = geoquizScreenshots[lang][currentGeoQuizImageIndex];
+}
+
+function prevImageGeoQuiz() {
+    const lang = document.getElementById("language").value;
+    currentGeoQuizImageIndex = (currentGeoQuizImageIndex - 1 + geoquizScreenshots[lang].length) % geoquizScreenshots[lang].length;
+    document.getElementById("carousel-image-geoquiz").src = geoquizScreenshots[lang][currentGeoQuizImageIndex];
 }

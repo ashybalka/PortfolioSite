@@ -50,9 +50,10 @@
             </ul>
             <button class="spoiler" onclick="toggleSpoiler('game1')" data-lang="play">Играть в Быки и Коровы</button>
             <div class="spoiler-content" id="game1">
-                <iframe src="https://ashybalka.github.io/BullsAndCowsWebGl/Build/index.html"></iframe>
+                <iframe id="game1-iframe" data-src="https://ashybalka.github.io/BullsAndCowsWebGl/Build/index.html"></iframe>
             </div>
         </section>
+		
 		<section class="game">
 			<h2 data-lang="wordtris">WordTris</h2>
 			<div class="carousel">
@@ -69,11 +70,34 @@
 				<li data-lang="wordtrisFeature2">Разнообразные уровни сложности</li>
 				<li data-lang="wordtrisFeature3">Поддержка нескольких языков</li>
 				<li data-lang="wordtrisFeature4">Множество режимов игры</li>
-			</ul>
+			</ul>			
 			<button class="spoiler" onclick="toggleSpoiler('wordtrisGame')" data-lang="playWordtris">Играть в WordTris</button>
-			<div class="spoiler-content" id="wordtrisGame">
-				<iframe src="https://ashybalka.github.io/WordTrisWebGL/Build/index.html"></iframe>
+            <div class="spoiler-content" id="wordtrisGame">
+                <iframe id="wordtrisGame-iframe" data-src="https://ashybalka.github.io/WordTrisWebGL/Build/index.html"></iframe>
+            </div>
+		</section>
+		
+		<section class="game">
+			<h2 data-lang="geoquiz">Geo Quiz</h2>
+			<div class="carousel">
+				<img id="carousel-image-geoquiz" src="" alt="Screenshot">
+				<div class="carousel-buttons">
+					<button class="carousel-button" onclick="prevImageGeoQuiz()">◀</button>
+					<button class="carousel-button" onclick="nextImageGeoQuiz()">▶</button>
+				</div>
 			</div>
+			<p data-lang="geoquizDescription">Проверь на сколько ты знаешь географию</p>
+			<p data-lang="geoquizFeatures">Особенности:</p>
+			<ul>
+				<li data-lang="geoquizFeature1">Увлекательный игровой процесс</li>
+				<li data-lang="geoquizFeature2">Разнообразные уровни сложности</li>
+				<li data-lang="geoquizFeature3">Поддержка нескольких языков</li>
+				<li data-lang="geoquizFeature4">Множество режимов игры</li>
+			</ul>
+			<button class="spoiler" onclick="toggleSpoiler('geoquizGame')" data-lang="playGeoQuiz">Играть в Geo Quiz</button>
+            <div class="spoiler-content" id="geoquizGame">
+                <iframe id="geoquizGame-iframe" data-src="https://ashybalka.github.io/GeoQuizWebGL/Build/index.html"></iframe>
+            </div>
 		</section>
 
     </main>
