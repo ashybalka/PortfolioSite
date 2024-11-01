@@ -29,6 +29,8 @@ function changeLanguage() {
     // Обновляем изображения карусели при изменении языка
     updateCarousel(lang);
 	updateWordtrisCarousel(lang);
+	updateGeoQuizCarousel(lang);
+	
 }
 
 const translations = {
@@ -94,6 +96,15 @@ const translations = {
         wordtrisFeature3: "Multi-language support",
         wordtrisFeature4: "Multiple game modes",
         playWordtris: "Play WordTris"
+		
+		geoquiz: "Geo Quiz", 
+		geoquizDescription: "Test how well you know geography",
+		geoquizFeatures: "Features:",
+		geoquizFeature1: "Exciting gameplay",
+		geoquizFeature2: "Various difficulty levels",
+		geoquizFeature3: "Multilingual support",
+		geoquizFeature4: "Multiple game modes",
+		playGeoQuiz: "Play GeoQuiz"
     
     },
     de: {
@@ -122,8 +133,17 @@ const translations = {
         wordtrisFeature2: "Verschiedene Schwierigkeitsgrade", 
         wordtrisFeature3: "Unterstützung mehrerer Sprachen", 
         wordtrisFeature4: "Mehrere Spielmodi",
-        playWordtris: "Spielen Sie WordTris" 
-    }
+        playWordtris: "Spielen Sie WordTris",
+	
+		geoquiz: "Geo Quiz", 
+		geoquizDescription: "Teste, wie gut du dich in Geographie auskennst",
+		geoquizFeatures: "Besonderheiten:",
+		geoquizFeature1: "Spannendes Gameplay",
+		geoquizFeature2: "Verschiedene Schwierigkeitsstufen",
+		geoquizFeature3: "Mehrsprachige Unterstützung",
+		geoquizFeature4: "Verschiedene Spielmodi",
+		playGeoQuiz: "GeoQuiz spielen"
+	}
 };
 
 const screenshots = {
