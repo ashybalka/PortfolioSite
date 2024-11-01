@@ -30,7 +30,6 @@ function changeLanguage() {
     updateCarousel(lang);
 	updateWordtrisCarousel(lang);
 	updateGeoQuizCarousel(lang);
-	
 }
 
 const translations = {
@@ -95,7 +94,7 @@ const translations = {
         wordtrisFeature2: "Various difficulty levels",
         wordtrisFeature3: "Multi-language support",
         wordtrisFeature4: "Multiple game modes",
-        playWordtris: "Play WordTris"
+        playWordtris: "Play WordTris",
 		
 		geoquiz: "Geo Quiz", 
 		geoquizDescription: "Test how well you know geography",
