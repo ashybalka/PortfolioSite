@@ -41,7 +41,13 @@ const translations = {
 		profile: "Профиль",
 		profile1: "Я опытный Unity разработчик с разнообразным опытом в области разработки программного обеспечения, инженерии DevOps и администрирования систем Linux. Мои сильные навыки программирования и дизайна в объектно-ориентированных языках, таких как C#, Python и Ruby on Rails, позволили мне создавать высококачественные, увлекательные игры. Я хорошо разбираюсь в методологии DevOps, что повышает мою способность оптимизировать процессы разработки и обеспечивать бесперебойную доставку проектов.",
 		profile2: "Мой опыт работы в международных командах отточил мои навыки сотрудничества и общения. Я увлечен использованием своих технических знаний и творческого видения для разработки инновационных игровых решений.",
-        bullsandcows: "Быки и Коровы",
+        skills: "Навыки",
+		languages: "Языки",
+		languages1: "Russian - Native speaker",
+		languages2: "English - Intermediate",
+		languages3: "German - Beginner",
+		
+		bullsandcows: "Быки и Коровы",
         description: "Подбери шифр за минимальное количество попыток!",
         features: "Особенности:",
         feature1: "ГиперКазуальная 2D игра",
@@ -76,7 +82,11 @@ const translations = {
 		profile: "Profile",
 		profile1: "I am an experienced Unity Developer with a diverse background in software development, DevOps engineering, and Linux system administration. My strong programming and design skills in object-oriented languages such as C#, Python, and Ruby on Rails allowed me to create high-quality, engaging games. I am well-versed in the DevOps methodology, which enhances my ability to streamline development processes and ensure smooth project delivery.",
 		profile2: "My experience working in international teams has honed my collaboration and communication skills. I am passionate about leveraging my technical expertise and creative vision to develop innovative gaming experiences. ",
-
+		skills: "Skills",
+		languages: "Languages",
+		languages1: "Русский - Носитель",
+		languages2: "Английский - Средний",
+		languages3: "Немецкий - Базовый",
 		
         bullsandcows: "Bulls And Cows",
         description: "Crack the code in the fewest attempts!",
@@ -114,7 +124,11 @@ const translations = {
 		profile: "Profil",
 		profile1: "Ich bin ein erfahrener Unity-Entwickler mit einem vielfältigen Hintergrund in der Softwareentwicklung, DevOps-Engineering und Linux-Systemadministration. Meine starken Programmier- und Designfähigkeiten in objektorientierten Sprachen wie C#, Python und Ruby on Rails ermöglichen es mir, qualitativ hochwertige, fesselnde Spiele zu erstellen. Ich bin gut mit der DevOps-Methodik vertraut, die meine Fähigkeit zur Optimierung von Entwicklungsprozessen und zur Gewährleistung einer reibungslosen Projektdurchführung verbessert.",
 		profile2: "Meine Erfahrung in der Zusammenarbeit mit internationalen Teams hat meine Kooperations- und Kommunikationsfähigkeiten geschärft. Ich bin leidenschaftlich daran interessiert, mein technisches Fachwissen und meine kreative Vision zu nutzen, um innovative Spielerlebnisse zu entwickeln.",
-
+        skills: "Kompetenzen",
+		languages: "Sprachen",
+		languages1: "Russisch - Muttersprache",
+		languages2: "Englisch - B2",
+		languages3: "Deutsch - A1",
 		
         bullsandcows: "Bullen und Kühe",
         description: "Finde den Code mit den wenigsten Versuchen!",
